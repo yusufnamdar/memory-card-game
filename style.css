@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "bubbly";
+  src: url("/assets/font/a-alloy-ink-font/AlloyInk-nRLyO.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: bubbly, sans-serif;
+  background: radial-gradient(#00b3b3, #001927);
+}
+
+.page-title {
+  font-size: 6em;
+  text-align: center;
+  color: #ff006e;
+}
+
+.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  perspective: 600px;
+}
+
+.card {
+  position: relative;
+  width: 125px;
+  height: 175px;
+  border-radius: 12px;
+  transition: transform 0.1s ease;
+  transform: scale(1);
+}
+
+.both-side {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 500ms ease-in-out;
+}
+
+.front-side {
+  transform: rotateY(180deg);
+  background-color: gold;
+  border: 1px solid gold;
+}
+
+.back-side {
+  background-color: black;
+  border: 1px solid black;
+}
+
+.card:active {
+  transform: scale(0.96);
+}
+
+.card.visible .back-side {
+  transform: rotateY(-180deg);
+}
+.card.visible .front-side {
+  transform: rotateY(0deg);
+}
+
+/* PNG image dimensions*/
+.bear {
+  width: 120px;
+  height: 90px;
+}
+
+.archer {
+  width: 100px;
+  height: 140px;
+}
+
+.witch,
+.gun,
+.skeleton,
+.plant,
+.wrestler {
+  width: 110px;
+  height: 120px;
+}
+.sap {
+  width: 110px;
+  height: 120px;
+  transform: translateX(-7px);
+}
+
+.symbol-img {
+  width: 120px;
+  height: 120px;
+  transform: translateX(2px);
+}
