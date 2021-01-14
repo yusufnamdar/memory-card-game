@@ -33,7 +33,7 @@ function runGame() {
     console.log(counter);
   }, 1000);
 
-  //Restart the game
+  //Reset the game
   clickReset.addEventListener("click", () => {
     clearInterval(timer);
     //Unflip all of the cards to reset, before click event added to all of them
@@ -41,7 +41,7 @@ function runGame() {
     clickStart.classList.remove("invisible");
     clickReset.classList.add("invisible");
   });
-  changeButtontoRestart();
+  changeButtontoReset();
 }
 
 function flip() {
@@ -78,7 +78,7 @@ function checkForMatch() {
       firstCard.classList.remove("visible");
       secondCard.classList.remove("visible");
       resetLastTwoCards();
-    }, 500);
+    }, 850);
     console.log(firstCard, secondCard);
   }
 }
@@ -115,7 +115,7 @@ function shuffle() {
   });
 }
 
-function changeButtontoRestart() {
+function changeButtontoReset() {
   clickStart.classList.add("invisible");
   clickReset.classList.remove("invisible");
 }

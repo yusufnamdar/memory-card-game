@@ -13,6 +13,7 @@
 
 html {
   min-height: 100vh;
+  cursor: ;
 }
 
 body {
@@ -38,6 +39,7 @@ body {
   border: 2px solid black;
   transform: scale(1);
   font-family: nightmare, sans-serif;
+  cursor: pointer;
 }
 
 .control-btn:active {
@@ -75,6 +77,7 @@ body {
   border-radius: 12px;
   transition: transform 0.1s ease;
   transform: scale(1);
+  cursor: pointer;
 }
 
 .both-side {
@@ -146,7 +149,7 @@ body {
 /* More responsive */
 @media (max-width: 740px) {
   .container {
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(3, auto);
   }
   .page-title {
     font-size: 4.5em;
