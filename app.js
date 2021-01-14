@@ -61,7 +61,7 @@ function flip() {
   }
 }
 
-//In sequence, check for match>if match, disable the two cards:else reset the two by removing visible class
+//In sequence, check for match > if match, disable the two cards : else reset the two by removing visible class
 function checkForMatch() {
   if (firstCard.dataset.id === secondCard.dataset.id) {
     firstCard.removeEventListener("click", flip);

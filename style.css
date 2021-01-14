@@ -142,3 +142,17 @@ body {
   height: 120px;
   transform: translateX(2px);
 }
+
+/* More responsive */
+@media (max-width: 740px) {
+  .container {
+    grid-template-columns: repeat(2, auto);
+  }
+  .page-title {
+    font-size: 4.5em;
+  }
+  .card {
+    width: 120px;
+    height: 140px;
+  }
+}
