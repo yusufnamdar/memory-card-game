@@ -8,8 +8,13 @@
   </head>
   <body>
     <h1 class="page-title">Brawl-Match</h1>
+    <div class="btn-container">
+      <button id="start" class="control-btn">Click to Start</button>
+      <button id="reset" class="control-btn invisible">restart</button>
+    </div>
     <div class="container">
-      <div class="card">
+      <div id="finished">Timer:<span> 100</span></div>
+      <div class="card" data-id="bear">
         <div class="front-side both-side">
           <img
             class="bear"
@@ -25,7 +30,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="bear">
         <div class="front-side both-side">
           <img
             class="bear"
@@ -41,7 +46,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="archer">
         <div class="front-side both-side">
           <img
             class="archer"
@@ -57,7 +62,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="archer">
         <div class="front-side both-side">
           <img
             class="archer"
@@ -73,7 +78,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="witch">
         <div class="front-side both-side">
           <img
             class="witch"
@@ -89,7 +94,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="witch">
         <div class="front-side both-side">
           <img
             class="witch"
@@ -105,7 +110,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="gun">
         <div class="front-side both-side">
           <img
             class="gun"
@@ -121,7 +126,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="gun">
         <div class="front-side both-side">
           <img
             class="gun"
@@ -137,7 +142,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="sap">
         <div class="front-side both-side">
           <img
             class="sap"
@@ -153,7 +158,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="sap">
         <div class="front-side both-side">
           <img
             class="sap"
@@ -169,7 +174,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="skeleton">
         <div class="front-side both-side">
           <img
             class="skeleton"
@@ -185,7 +190,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="skeleton">
         <div class="front-side both-side">
           <img
             class="skeleton"
@@ -201,7 +206,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="plant">
         <div class="front-side both-side">
           <img
             class="plant"
@@ -217,7 +222,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="plant">
         <div class="front-side both-side">
           <img
             class="plant"
@@ -233,7 +238,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="wrestler">
         <div class="front-side both-side">
           <img
             class="wrestler"
@@ -249,7 +254,7 @@
           />
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="wrestler">
         <div class="front-side both-side">
           <img
             class="wrestler"
