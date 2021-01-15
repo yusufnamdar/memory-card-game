@@ -26,13 +26,14 @@ body {
   font-size: 6em;
   text-align: center;
   color: #ff006e;
+  margin-bottom: 30px;
 }
 
 .control-btn {
   font-size: 2em;
   display: block;
   margin: auto;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border-radius: 5px;
   background-color: goldenrod;
   border: 2px solid black;

@@ -31,27 +31,28 @@ let score = 0;
 let counter = 100;
 //stopFlip will prevent another flip during unflipping by setTimeout()
 let busy = false;
+//Have to create global timer variable, otherwise victory() function does not work due to timer being undefined
+let timer;
 
 clickStart.addEventListener("click", runGame);
 
 //Main function
 function runGame() {
-  resetBoard();
   shuffle();
   audioController.startBgMusic();
+
   cards.forEach((card) => {
     card.addEventListener("click", flip);
   });
 
   //Timer to limit game rounds
-  let timer = setInterval(() => {
+  timer = setInterval(() => {
     counter--;
     finished.innerText = `Timer: ${counter}`;
     if (counter === 0) {
       clearInterval(timer);
       gameOver();
     }
-    console.log(counter);
   }, 1000);
 
   //Reset the game
@@ -60,8 +61,7 @@ function runGame() {
     clearInterval(timer);
     //Unflip all of the cards, before click event added to all of them
     resetBoard();
-    clickStart.classList.remove("invisible");
-    clickReset.classList.add("invisible");
+    changeButtontoStart();
   });
   changeButtontoReset();
 }
@@ -72,13 +72,11 @@ function flip() {
     if (firstCard === undefined) {
       //firstCard is assigned to the card that is clicked
       firstCard = this;
-      console.dir(this);
       this.classList.add("visible");
     } else if (firstCard !== this) {
       //else if condition to remove the possibility of assigning the same exact card to secondCard variable
       secondCard = this;
       this.classList.add("visible");
-      console.log(this);
       checkForMatch();
     }
   }
@@ -87,28 +85,21 @@ function flip() {
 //In sequence, check for match > if match, disable the two cards : else reset the two by removing visible class
 function checkForMatch() {
   if (firstCard.dataset.id === secondCard.dataset.id) {
-    firstCard.removeEventListener("click", flip);
-    secondCard.removeEventListener("click", flip);
+    disableTwoCards();
     score++;
-    resetLastTwoCards();
-    console.log(score);
+    resetTwoCards();
     if (score === 8) {
-      finished.style.color = "green";
-      finished.innerText = "You have won!!!";
-      audioController.stopBgMusic();
+      victory();
     }
   } else {
     busy = true;
-    setTimeout(() => {
-      firstCard.classList.remove("visible");
-      secondCard.classList.remove("visible");
-      resetLastTwoCards();
-    }, 800);
-    console.log(firstCard, secondCard);
+    unFlipTwoCards();
   }
 }
 
-function resetLastTwoCards() {
+//--Functions that are used--
+
+function resetTwoCards() {
   firstCard = undefined;
   secondCard = undefined;
   busy = false;
@@ -144,4 +135,29 @@ function shuffle() {
 function changeButtontoReset() {
   clickStart.classList.add("invisible");
   clickReset.classList.remove("invisible");
+}
+
+function changeButtontoStart() {
+  clickStart.classList.remove("invisible");
+  clickReset.classList.add("invisible");
+}
+
+function disableTwoCards() {
+  firstCard.removeEventListener("click", flip);
+  secondCard.removeEventListener("click", flip);
+}
+
+function unFlipTwoCards() {
+  setTimeout(() => {
+    firstCard.classList.remove("visible");
+    secondCard.classList.remove("visible");
+    resetTwoCards();
+  }, 800);
+}
+
+function victory() {
+  clearInterval(timer);
+  finished.style.color = "white";
+  finished.innerText = "You have won!!!";
+  audioController.stopBgMusic();
 }
