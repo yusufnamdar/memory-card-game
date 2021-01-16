@@ -31,7 +31,7 @@ let score = 0;
 let counter = 100;
 //stopFlip will prevent another flip during unflipping by setTimeout()
 let busy = false;
-//Have to create global timer variable, otherwise victory() function does not work due to timer being undefined
+//Have to create global timer variable of setTimeInterval(), otherwise victory() function does not work due to timer being undefined
 let timer;
 
 clickStart.addEventListener("click", runGame);
