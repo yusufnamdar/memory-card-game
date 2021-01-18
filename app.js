@@ -113,6 +113,7 @@ function resetBoard() {
   finished.innerText = `Timer: ${counter}`;
   cards.forEach((card) => {
     card.classList.remove("visible");
+    card.removeEventListener("click", flip);
   });
 }
 

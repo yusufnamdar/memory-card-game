@@ -147,12 +147,12 @@ body {
 }
 
 /* More responsive */
-@media (max-width: 740px) {
+@media (max-width: 600px) {
   .container {
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(2, auto);
   }
   .page-title {
-    font-size: 4.5em;
+    font-size: 3em;
   }
   .card {
     width: 120px;
