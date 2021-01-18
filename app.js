@@ -8,8 +8,8 @@ class AudioController {
     this.bgMusic = new Audio("./assets/Audio/bensound-clearday.mp3");
     this.flipSound = new Audio("./assets/Audio/flip.wav");
     this.bgMusic.loop = true;
-    this.bgMusic.volume = 0.3;
-    this.flipSound.volume = 1;
+    this.bgMusic.volume = 0.06;
+    this.flipSound.volume = 0.5;
   }
   startBgMusic() {
     this.bgMusic.play();
